@@ -1,0 +1,277 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: var(--spacing-md);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideInUp 0.3s ease;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.donation-modal {
+    padding: var(--spacing-xl);
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: rgba(139, 0, 0, 0.1);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--deep-red);
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    background: var(--deep-red);
+    color: var(--white);
+    transform: rotate(90deg);
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.modal-header h2 {
+    color: var(--deep-red);
+    margin-bottom: var(--spacing-sm);
+    font-size: 2rem;
+}
+
+.modal-header .sanskrit-text {
+    margin: var(--spacing-xs) 0;
+}
+
+.tagline {
+    color: #666;
+    font-style: italic;
+}
+
+.donation-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.donation-option {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 248, 220, 0.9));
+    border: 2px solid var(--gold);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    transition: all var(--transition-normal);
+}
+
+.donation-option:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-divine);
+}
+
+.option-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.option-icon {
+    font-size: 2rem;
+}
+
+.option-header h3 {
+    color: var(--deep-red);
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.option-content {
+    color: #333;
+}
+
+/* QR Section */
+.qr-section {
+    text-align: center;
+}
+
+.qr-code {
+    width: 200px;
+    height: 200px;
+    margin: var(--spacing-md) auto;
+    border: 4px solid var(--gold);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm);
+    background: var(--white);
+}
+
+/* Bank Details */
+.bank-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-xs) 0;
+    border-bottom: 1px solid rgba(255, 153, 51, 0.2);
+}
+
+.detail-row strong {
+    color: var(--deep-red);
+    min-width: 140px;
+}
+
+.detail-row span {
+    flex: 1;
+    text-align: right;
+    margin-right: var(--spacing-sm);
+}
+
+.copy-btn {
+    background: var(--saffron);
+    border: none;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all var(--transition-fast);
+}
+
+.copy-btn:hover {
+    background: var(--saffron-dark);
+    transform: scale(1.1);
+}
+
+/* UPI Section */
+.upi-section {
+    text-align: center;
+}
+
+.upi-id-box {
+    background: rgba(255, 153, 51, 0.1);
+    border: 2px dashed var(--saffron);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    margin: var(--spacing-md) 0;
+}
+
+.upi-id {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--deep-red);
+    margin-bottom: var(--spacing-md);
+    font-family: monospace;
+}
+
+.copy-btn-large {
+    background: var(--gradient-primary);
+    color: var(--white);
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.copy-btn-large:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Online Payment */
+.online-payment {
+    text-align: center;
+    padding: var(--spacing-lg);
+}
+
+.online-payment .note {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: var(--spacing-sm);
+}
+
+/* Copy Notification */
+.copy-notification {
+    position: fixed;
+    bottom: var(--spacing-xl);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4CAF50;
+    color: var(--white);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-lg);
+    animation: slideInUp 0.3s ease;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .donation-modal {
+        padding: var(--spacing-lg);
+    }
+
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .donation-options {
+        grid-template-columns: 1fr;
+    }
+
+    .qr-code {
+        width: 150px;
+        height: 150px;
+    }
+
+    .detail-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+
+    .detail-row span {
+        text-align: left;
+        margin-right: 0;
+    }
+}

@@ -1,0 +1,93 @@
+.daan-page {
+    min-height: 100vh;
+}
+
+.daan-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.daan-intro h2 {
+    color: var(--deep-red);
+    margin-bottom: 1rem;
+    font-size: 1.875rem;
+}
+
+.daan-intro p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-gray);
+}
+
+.donation-cta {
+    text-align: center;
+    margin: 2.5rem 0;
+}
+
+.donation-impact {
+    margin: 3rem 0;
+}
+
+.impact-card {
+    text-align: center;
+    padding: 1.75rem 1.25rem;
+}
+
+.impact-icon {
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+}
+
+.impact-card h3 {
+    color: var(--deep-red);
+    margin-bottom: 0.625rem;
+    font-size: 1.125rem;
+}
+
+.impact-card p {
+    color: var(--text-gray);
+    line-height: 1.6;
+    font-size: 0.9375rem;
+}
+
+.transparency-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.08), rgba(212, 175, 55, 0.08));
+    border-radius: var(--radius-lg);
+    border: 1.5px solid var(--gold);
+}
+
+.transparency-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.transparency-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-gray);
+    margin-bottom: 1rem;
+}
+
+.transparency-content .note {
+    font-style: italic;
+    font-size: 0.9375rem;
+    color: var(--saffron-dark);
+}
+
+@media (max-width: 768px) {
+    .daan-intro h2 {
+        font-size: 1.625rem;
+    }
+
+    .impact-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .transparency-section {
+        padding: 1.5rem;
+    }
+}

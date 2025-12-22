@@ -1,0 +1,322 @@
+/* Book Pandit Page - Divine Styling */
+.book-pandit-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg,
+            rgba(255, 248, 240, 0.95) 0%,
+            rgba(255, 237, 213, 0.95) 100%),
+        url('/images/temple-background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Page Header with Divine Background */
+.pandit-header {
+    position: relative;
+    background: linear-gradient(135deg,
+            rgba(139, 0, 0, 0.85) 0%,
+            rgba(255, 153, 51, 0.85) 100%);
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.page-title {
+    color: var(--white);
+    margin-bottom: var(--spacing-md);
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-family: 'Tiro Devanagari Hindi', serif;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    font-family: 'Tiro Devanagari Hindi', serif;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Pandits Section */
+.pandits-section {
+    background: transparent;
+    position: relative;
+}
+
+.pandits-title,
+.pujas-title,
+.booking-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-2xl);
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-weight: 500;
+}
+
+.pandits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Pujas Section */
+.pujas-section {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+/* Puja Filters */
+.puja-filters {
+    margin-bottom: 2.5rem;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    display: block;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: var(--radius-lg);
+    font-size: 1rem;
+    font-family: 'Tiro Devanagari Hindi', serif;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    border: 2px solid var(--saffron);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    color: var(--saffron);
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    font-family: 'Tiro Devanagari Hindi', serif;
+}
+
+.filter-btn:hover {
+    background: rgba(255, 153, 51, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 153, 51, 0.2);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--saffron), var(--deep-red));
+    color: var(--white);
+    border-color: var(--deep-red);
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+}
+
+/* Pujas Grid */
+.pujas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.puja-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow:
+        0 10px 40px rgba(139, 0, 0, 0.1),
+        0 0 20px rgba(255, 153, 51, 0.05);
+}
+
+.puja-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+    box-shadow:
+        0 20px 60px rgba(139, 0, 0, 0.2),
+        0 0 40px rgba(255, 153, 51, 0.15);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.puja-card h3 {
+    color: var(--deep-red);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.3rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.puja-category {
+    color: var(--saffron);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: rgba(255, 153, 51, 0.1);
+    border-radius: var(--radius-md);
+}
+
+.puja-description {
+    color: var(--text-gray);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.puja-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--spacing-md);
+    border-top: 2px solid rgba(255, 215, 0, 0.2);
+}
+
+.puja-duration {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.puja-price {
+    color: var(--deep-red);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.no-results {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    font-family: 'Tiro Devanagari Hindi', serif;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-xl);
+    margin: 2rem 0;
+}
+
+/* Booking Section */
+.booking-section {
+    background: transparent;
+}
+
+.booking-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+    }
+
+    .pandit-header {
+        padding: 3rem 0;
+    }
+
+    .pandits-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .pujas-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .category-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-btn {
+        width: 100%;
+    }
+
+    .search-input {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.75rem;
+    }
+
+    .page-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .pandit-header {
+        padding: 2.5rem 0;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .puja-card {
+        padding: var(--spacing-lg);
+    }
+
+    .puja-card h3 {
+        font-size: 1.2rem;
+    }
+}
