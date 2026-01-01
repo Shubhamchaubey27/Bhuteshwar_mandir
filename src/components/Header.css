@@ -183,11 +183,13 @@
     }
 
     .temple-name h1 {
-        font-size: 1.25rem;
+        font-size: 1rem;
+        line-height: 1.3;
     }
 
     .temple-name p {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
+        line-height: 1.2;
     }
 
     .desktop-nav {

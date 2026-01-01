@@ -1,0 +1,212 @@
+/* Ram Ji Divine Section */
+.ram-ji-section {
+    background: linear-gradient(135deg,
+            rgba(255, 248, 240, 0.6) 0%,
+            rgba(255, 237, 213, 0.8) 50%,
+            rgba(255, 248, 240, 0.6) 100%);
+    position: relative;
+    overflow: hidden;
+    padding: var(--spacing-3xl) 0;
+}
+
+.ram-ji-section::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 140, 0, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 25s ease-in-out infinite;
+}
+
+.ram-ji-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--spacing-3xl);
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ram-ji-image-col {
+    position: relative;
+    animation: slideInLeft 1s ease-out;
+}
+
+.ram-ji-img-wrapper {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+}
+
+.ram-ji-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: var(--radius-xl);
+    box-shadow:
+        0 25px 70px rgba(139, 0, 0, 0.35),
+        0 0 50px rgba(255, 140, 0, 0.25);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+}
+
+.ram-ji-image:hover {
+    transform: scale(1.05) translateY(-8px);
+}
+
+.ram-ji-glow {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    right: -30px;
+    bottom: -30px;
+    background: linear-gradient(135deg, var(--saffron), var(--deep-red));
+    opacity: 0.4;
+    filter: blur(40px);
+    border-radius: var(--radius-xl);
+    z-index: -1;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+.ram-ji-sloka-col {
+    animation: slideInRight 1s ease-out;
+}
+
+.ram-ji-sloka-box {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.12), rgba(255, 153, 51, 0.12));
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    border-left: 5px solid var(--gold);
+    border-right: 5px solid var(--gold);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: 0 10px 30px rgba(139, 0, 0, 0.1);
+}
+
+.ram-ji-sanskrit {
+    font-size: 1.4rem;
+    color: var(--deep-red);
+    margin-bottom: var(--spacing-sm);
+    text-align: left;
+    font-weight: 600;
+    line-height: 2;
+    animation: fadeInUp 1.2s ease-out backwards;
+}
+
+.ram-ji-sanskrit:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.ram-ji-sanskrit:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.ram-ji-sanskrit:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.ram-ji-sanskrit:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.ram-ji-meaning {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    animation: fadeInUp 1.4s ease-out backwards;
+    animation-delay: 1s;
+}
+
+.meaning-title {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    color: var(--saffron);
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-md);
+    font-weight: 700;
+    text-align: center;
+}
+
+.meaning-text {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    color: var(--text-gray);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    text-align: left;
+}
+
+.ram-ji-symbols {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+    animation: fadeInUp 1.6s ease-out backwards;
+    animation-delay: 1.2s;
+}
+
+.ram-ji-symbols .symbol-icon {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1.5rem;
+    color: var(--deep-red);
+    font-weight: 700;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 153, 51, 0.2));
+    border-radius: 20px;
+    border: 2px solid rgba(255, 215, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.ram-ji-symbols .symbol-icon:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 140, 0, 0.3);
+    border-color: var(--gold);
+}
+
+/* Responsive Design for Ram Ji Section */
+@media (max-width: 968px) {
+    .ram-ji-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+    }
+
+    .ram-ji-image-col {
+        text-align: center;
+    }
+
+    .ram-ji-image {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .ram-ji-sanskrit {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .meaning-text {
+        text-align: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .ram-ji-image {
+        max-width: 100%;
+    }
+
+    .ram-ji-sanskrit {
+        font-size: 1.1rem;
+    }
+
+    .meaning-text {
+        font-size: 0.95rem;
+    }
+
+    .ram-ji-symbols .symbol-icon {
+        font-size: 1.2rem;
+        padding: var(--spacing-xs) var(--spacing-md);
+    }
+}
