@@ -105,8 +105,8 @@ export default function Events() {
                                 <div className="announcement-icon">📿</div>
                                 <h3>Special Pujas</h3>
                                 <p>
-                                    Book experienced pandits for all types of pujas and ceremonies.
-                                    Contact us via WhatsApp or visit the Book Pandit section for more details.
+                                    Book experienced pandit ji for all types of pujas and ceremonies.
+                                    Contact us via WhatsApp or visit the Book Pandit Ji section for more details.
                                 </p>
                                 <div className="announcement-badge">Available Daily</div>
                             </div>

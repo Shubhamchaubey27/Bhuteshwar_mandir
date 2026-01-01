@@ -63,8 +63,8 @@ const BookingForm = ({ selectedPuja, selectedPandit }: BookingFormProps) => {
         };
 
         try {
-            // Send to PHP backend
-            const response = await fetch('/api/send-booking.php', {
+            // Send to Next.js API route
+            const response = await fetch('/api/send-booking', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
