@@ -26,7 +26,7 @@ export const pandits: Pandit[] = [
     {
         id: 3,
         name: "Aacharya Teekendra Tiwari Ji",
-        photo: "/images/pandit_ji/acharya teekendra ji 2.jpeg",
+        photo: "/images/pandit_ji/guruji_panditji.jpeg",
         specialization: "Devotional Pujas & Kirtan",
         experience: "16ears",
         languages: ["Hindi", "Sanskrit"],
