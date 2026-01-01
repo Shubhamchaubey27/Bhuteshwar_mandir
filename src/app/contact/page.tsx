@@ -35,7 +35,7 @@ const ContactPage = () => {
         setLoading(true);
 
         try {
-            const response = await fetch('/api/send-contact', {
+            const response = await fetch('/api/send-contact.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
