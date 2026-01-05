@@ -11,12 +11,12 @@ const Footer = () => {
                         <p className="temple-tagline">Where Devotion Meets Divinity</p>
                         <p className="temple-address">
                             Bhuteshwar Mandir<br />
-                            खांडसा रोड, बसई रोड<br />
+                            सेक्टर 11, बसई खांडसा रोड, सदर बाज़ार<br />
                             गुरुग्राम, हरियाणा
                         </p>
                     </div>
 
-                    {/* Quick Links */}
+                    {/* Quick Links - Part 1 */}
                     <div className="footer-section">
                         <h4>Quick Links</h4>
                         <ul className="footer-links">
@@ -24,9 +24,17 @@ const Footer = () => {
                             <li><a href="/book-pandit">Book Pandit Ji</a></li>
                             <li><a href="/events">Events</a></li>
                             <li><a href="/daan">Donation</a></li>
+                        </ul>
+                    </div>
+
+                    {/* Quick Links - Part 2 */}
+                    <div className="footer-section">
+                        <h4>More Links</h4>
+                        <ul className="footer-links">
                             <li><a href="/learning">Learning</a></li>
-                            <li><a href="/kirtan">Radha Naam Kirtan</a></li>
+                            <li><a href="/kirtan">Shri Radha Naam Sankirtan</a></li>
                             <li><a href="/contact">Contact</a></li>
+                            <li><a href="/feedback">Feedback</a></li>
                         </ul>
                     </div>
 
@@ -41,7 +49,7 @@ const Footer = () => {
                                 <strong>Evening Aarti:</strong> 6:00 PM
                             </li>
                             <li>
-                                <strong>Radha Naam Kirtan:</strong> 6:25 PM (Daily)
+                                <strong>Shri Radha Naam Kirtan:</strong> 6:25 PM (Daily)
                             </li>
                             <li>
                                 <strong>Temple Open:</strong> 5:30 AM - 9:00 PM
@@ -54,13 +62,13 @@ const Footer = () => {
                         <h4>Contact Us</h4>
                         <ul className="contact-list">
                             <li>
-                                <strong>Phone:</strong> +91 93249 15650
+                                <strong>Phone:</strong> +91 7827740061
                             </li>
                             <li>
-                                <strong>Email:</strong> info@bhuteshwarmandir.com
+                                <strong>Email:</strong> bhuteshwarnathmandir@gmail.com
                             </li>
                             <li>
-                                <strong>WhatsApp:</strong> +91 93249 15650
+                                <strong>WhatsApp:</strong> +91 8750929004
                             </li>
                         </ul>
                         <div className="social-links">

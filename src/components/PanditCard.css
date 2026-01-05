@@ -174,12 +174,14 @@
 @media (max-width: 768px) {
     .pandit-image {
         height: 280px;
+        background: #f9f9f9;
     }
 
     .pandit-image img {
-        object-fit: cover;
-        object-position: center 20%;
+        object-fit: contain;
+        object-position: center;
         transform: scale(1);
+        padding: 10px;
     }
 
     .pandit-card:hover .pandit-image img {
@@ -194,12 +196,14 @@
 @media (max-width: 480px) {
     .pandit-image {
         height: 260px;
+        background: #f9f9f9;
     }
 
     .pandit-image img {
-        object-fit: cover;
-        object-position: center 20%;
+        object-fit: contain;
+        object-position: center;
         transform: scale(1);
+        padding: 10px;
     }
 
     .pandit-card:hover .pandit-image img {

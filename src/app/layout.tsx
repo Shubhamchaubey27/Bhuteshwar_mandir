@@ -6,7 +6,7 @@ import '@/styles/index.css';
 
 export const metadata: Metadata = {
   title: 'Bhuteshwar Mandir - भूतेश्वर मंदिर',
-  description: 'Bhuteshwar Mandir - A sacred place of devotion, peace, and spiritual enlightenment. Book pandit ji for pujas, attend daily Radha Naam Kirtan, and participate in temple events.',
+  description: 'Bhuteshwar Mandir - A sacred place of devotion, peace, and spiritual enlightenment. Book pandit ji for pujas, attend daily Shri Radha Naam Kirtan, and participate in temple events.',
   keywords: 'Bhuteshwar Mandir, temple, puja, pandit booking, kirtan, donation, Vedic music, astrology',
   icons: {
     icon: '/images/hanuman_logo_1765693410261.png',

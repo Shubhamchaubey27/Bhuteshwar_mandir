@@ -2,11 +2,22 @@ import { Pandit } from '../types';
 
 export const pandits: Pandit[] = [
     {
+        id: 3,
+        name: "Aacharya Teekendra Tiwari Ji",
+        photo: "/images/pandit_ji/panditji.jpeg",
+        specialization: "Devotional Pujas & Sankirtan",
+        experience: "16 years",
+        languages: ["Hindi", "Sanskrit"],
+        whatsapp: "918750929004",
+        description: "Master of devotional pujas, bhajans, and sankirtan. Expert in Shri Radha Naam Sankirtan, Hanuman Chalisa, and Akhand Ramayan Paath. Also teaches Vedic music and astrology.",
+        expertise: ["Shri Radha Naam Sankirtan", "Hanuman Chalisa", "Akhand Ramayan", "Sangeet (Music)", "Astrology Teaching"]
+    },
+    {
         id: 1,
         name: "Acharya Nandkishor Sharma",
         photo: "/images/pandit_ji/acharya nandkishore.jpeg",
         specialization: "Vedic Rituals & Marriage Ceremonies",
-        experience: "25 years",
+        experience: "21 years",
         languages: ["Hindi", "Sanskrit"],
         whatsapp: "919268690660",
         description: "Expert in all Vedic rituals, marriage ceremonies, and griha pravesh pujas. Specializes in traditional North Indian style pujas with deep knowledge of Vedic scriptures.",
@@ -22,17 +33,6 @@ export const pandits: Pandit[] = [
         whatsapp: "919324915651",
         description: " expert in dosh nivaran pujas. Specializes in Mangal Dosh, Kaal Sarp Dosh, and Pitra Dosh remedies with proven results.",
         expertise: ["Jyotish (Astrology)", "Astrology", "Kaal Sarp Puja", "Mangal Dosh Nivaran", "Pitra Dosh Nivaran"]
-    },
-    {
-        id: 3,
-        name: "Aacharya Teekendra Tiwari Ji",
-        photo: "/images/pandit_ji/guruji_panditji.jpeg",
-        specialization: "Devotional Pujas & Kirtan",
-        experience: "16ears",
-        languages: ["Hindi", "Sanskrit"],
-        whatsapp: "918750929004",
-        description: "Master of devotional pujas, bhajans, and kirtan. Expert in Radha Naam Kirtan, Hanuman Chalisa, and Akhand Ramayan Paath. Also teaches Vedic music and astrology.",
-        expertise: ["Radha Naam Kirtan", "Hanuman Chalisa", "Akhand Ramayan", "Sangeet (Music)", "Astrology Teaching"]
     }
 ];
 

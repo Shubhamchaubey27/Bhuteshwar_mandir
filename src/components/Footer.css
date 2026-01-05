@@ -14,7 +14,7 @@
 
 .footer-section h3 {
     font-family: 'Tiro Devanagari Hindi', serif;
-    font-size: 1.5rem;
+    font-size: 1.125rem;
     color: var(--gold-light);
     margin-bottom: 0.875rem;
 }
@@ -22,14 +22,14 @@
 .footer-section h4 {
     color: var(--gold-light);
     margin-bottom: 1rem;
-    font-size: 1.0625rem;
+    font-size: 1rem;
 }
 
 .temple-tagline {
     font-style: italic;
     margin-bottom: 0.625rem;
     opacity: 0.9;
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
 }
 
 .temple-address {
@@ -57,7 +57,7 @@
     text-decoration: none;
     transition: all var(--transition-normal);
     display: inline-block;
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
 }
 
 .footer-links a:hover {
@@ -86,7 +86,7 @@
 }
 
 .social-links a {
-    font-size: 1.375rem;
+    font-size: 1.25rem;
     text-decoration: none;
     transition: transform var(--transition-normal);
 }
@@ -109,7 +109,7 @@
 
 .footer-bottom .sanskrit-text {
     color: var(--gold-light);
-    font-size: 1rem;
+    font-size: 0.9375rem;
 }
 
 @media (max-width: 768px) {
@@ -123,6 +123,25 @@
     }
 
     .footer-section h3 {
-        font-size: 1.375rem;
+        font-size: 0.9375rem;
+    }
+
+    .temple-tagline {
+        font-size: 0.8125rem;
+    }
+
+    .temple-address,
+    .footer-links a,
+    .timings-list li,
+    .contact-list li {
+        font-size: 0.8125rem;
+    }
+
+    .footer-bottom p {
+        font-size: 0.8125rem;
+    }
+
+    .footer-bottom .sanskrit-text {
+        font-size: 0.875rem;
     }
 }

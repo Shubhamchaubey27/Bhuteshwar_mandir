@@ -42,7 +42,7 @@ export const events: Event[] = [
         title: "Janmashtami Celebration",
         date: "2025-08-16",
         time: "11:00 PM (15th) - 2:00 AM (16th)",
-        description: "Grand celebration of Lord Krishna's birth with midnight abhishek, bhajans, and Radha Naam Kirtan. Special decoration and prasad.",
+        description: "Grand celebration of Lord Krishna's birth with midnight abhishek, bhajans, and Shri Radha Naam Kirtan. Special decoration and prasad.",
         image: "/images/radha_krishna_hero_1765693499197.png",
         type: "Festival"
     },

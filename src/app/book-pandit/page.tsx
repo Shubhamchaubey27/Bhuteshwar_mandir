@@ -64,14 +64,10 @@ export default function BookPandit() {
                     </h1>
                     <p className="pandit-hero-subtitle">Book Experienced Pandits for All Ceremonies</p>
                     <p className="pandit-hero-description">
-                        हमारे अनुभवी एवं विद्वान पंडित जी से अपनी पूजा, संस्कार एवं अनुष्ठान की व्यवस्था करें
+                        हमारे अनुभवी एवं विद्वान ब्राह्मणों से अपनी पूजा, संस्कार एवं अनुष्ठान की व्यवस्था करें
                     </p>
                     <div className="hero-stats">
-                        <div className="stat-item">
-                            <div className="stat-number">3</div>
-                            <div className="stat-label">अनुभवी पंडित जी</div>
-                        </div>
-                        <div className="stat-divider"></div>
+                       
                         <div className="stat-item">
                             <div className="stat-number">36+</div>
                             <div className="stat-label">पूजा विधियां</div>

@@ -1,0 +1,554 @@
+/* Feedback Page Styles */
+
+.feedback-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fef5e7 0%, #fff9f0 100%);
+}
+
+/* Hero Section */
+.feedback-hero {
+    position: relative;
+    height: 300px;
+    background: linear-gradient(135deg, #8B0000 0%, #FF6B35 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/mandir/bhuteshwarnath.jpeg') center/cover;
+    opacity: 0.2;
+}
+
+.feedback-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.feedback-hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Tiro Devanagari Hindi', serif;
+}
+
+.feedback-hero-content p {
+    font-size: 1.4rem;
+    opacity: 0.95;
+    font-weight: 500;
+}
+
+/* Feedback Form Section */
+.feedback-form-section {
+    padding: 80px 20px;
+}
+
+.feedback-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #8B0000;
+    font-family: 'Tiro Devanagari Hindi', serif;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.title-ornament {
+    color: #FFD700;
+    font-size: 1.8rem;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    font-family: 'Tiro Devanagari Hindi', serif;
+}
+
+.feedback-content {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.rating-emoji-display {
+    margin-top: 1rem;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.emoji-large {
+    font-size: 4rem;
+    display: inline-block;
+    animation: bounceIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.form-group label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-family: 'Tiro Devanagari Hindi', serif;
+}
+
+.required {
+    color: #FF6B35;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #FF6B35;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E") no-repeat right 15px center;
+    padding-right: 40px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #8B0000 0%, #FF6B35 100%);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    font-family: 'Tiro Devanagari Hindi', serif;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(139, 0, 0, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Loading Spinner */
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Success Message */
+.success-message {
+    text-align: center;
+    padding: 60px 30px;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+    color: white;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 30px;
+}
+
+.success-message h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-family: 'Tiro Devanagari Hindi', serif;
+}
+
+.success-message p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    font-family: 'Tiro Devanagari Hindi', serif;
+}
+
+.whatsapp-redirect {
+    color: #25D366;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+/* Why Feedback Section */
+.why-feedback {
+    max-width: 1200px;
+    margin: 80px auto 0;
+    text-align: center;
+}
+
+.why-feedback h3 {
+    font-size: 2rem;
+    color: #8B0000;
+    margin-bottom: 40px;
+    font-family: 'Tiro Devanagari Hindi', serif;
+}
+
+.feedback-reasons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.reason-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.reason-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.reason-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.reason-card h4 {
+    font-size: 1.3rem;
+    color: #FF6B35;
+    margin-bottom: 10px;
+    font-family: 'Tiro Devanagari Hindi', serif;
+}
+
+.reason-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    font-family: 'Tiro Devanagari Hindi', serif;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .feedback-hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .feedback-hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .feedback-content {
+        padding: 40px 30px;
+    }
+
+    .feedback-reasons {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .feedback-hero {
+        height: 250px;
+    }
+
+    .feedback-hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .feedback-hero-content p {
+        font-size: 1rem;
+    }
+
+    .feedback-form-section {
+        padding: 50px 20px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .title-ornament {
+        font-size: 1.5rem;
+    }
+
+    .section-description {
+        font-size: 1rem;
+    }
+
+    .feedback-content {
+        padding: 30px 20px;
+    }
+
+    .form-group label {
+        font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+
+    .submit-btn {
+        padding: 14px;
+        font-size: 1.1rem;
+    }
+
+    .success-message {
+        padding: 40px 20px;
+    }
+
+    .success-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2.5rem;
+    }
+
+    .success-message h3 {
+        font-size: 1.6rem;
+    }
+
+    .success-message p {
+        font-size: 1rem;
+    }
+
+    .why-feedback h3 {
+        font-size: 1.6rem;
+    }
+
+    .reason-card {
+        padding: 30px 25px;
+    }
+
+    .reason-icon {
+        font-size: 2.5rem;
+    }
+
+    .reason-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .reason-card p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .feedback-hero {
+        height: 200px;
+    }
+
+    .feedback-hero-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .feedback-hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .feedback-form-section {
+        padding: 40px 15px;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .title-ornament {
+        font-size: 1.2rem;
+    }
+
+    .section-description {
+        font-size: 0.9rem;
+    }
+
+    .feedback-content {
+        padding: 25px 15px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    .form-group textarea {
+        min-height: 100px;
+    }
+
+    .submit-btn {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .success-message {
+        padding: 30px 15px;
+    }
+
+    .success-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .success-message h3 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .success-message p {
+        font-size: 0.9rem;
+    }
+
+    .whatsapp-redirect {
+        font-size: 0.85rem;
+        margin-top: 15px;
+    }
+
+    .why-feedback h3 {
+        font-size: 1.4rem;
+        margin-bottom: 30px;
+    }
+
+    .reason-card {
+        padding: 25px 20px;
+    }
+
+    .reason-icon {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .reason-card h4 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    .reason-card p {
+        font-size: 0.85rem;
+    }
+}

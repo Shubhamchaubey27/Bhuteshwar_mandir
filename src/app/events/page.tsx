@@ -63,9 +63,9 @@ export default function Events() {
                         <div className="announcements-grid">
                             <div className="announcement-card">
                                 <div className="announcement-icon">🎵</div>
-                                <h3>Daily Radha Naam Kirtan</h3>
+                                <h3>Daily Shri Radha Naam Sankirtan</h3>
                                 <p>
-                                    Join us every evening at <strong>6:25 PM</strong> for divine Radha Naam Kirtan
+                                    Join us every evening at <strong>6:25 PM</strong> for divine Shri Radha Naam Sankirtan
                                     after the evening aarti. All devotees are welcome to participate in this
                                     sacred gathering of devotional music and chanting.
                                 </p>

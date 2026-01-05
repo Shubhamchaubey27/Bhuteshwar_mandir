@@ -5,9 +5,9 @@ import '@/styles/Kirtan.css';
 import '@/styles/RamDarbar.css';
 
 export const metadata: Metadata = {
-    title: 'Radha Naam Kirtan - Bhuteshwar Mandir',
-    description: 'Join us daily at 6:25 PM for divine Radha Naam Kirtan at Bhuteshwar Mandir. Experience the transformative power of devotional chanting.',
-    keywords: 'kirtan, Radha naam, bhajan, devotional music, Bhuteshwar Mandir, Krishna bhakti',
+    title: 'Shri Radha Naam Kirtan - Bhuteshwar Mandir',
+    description: 'Join us daily at 6:25 PM for divine Shri Radha Naam Kirtan at Bhuteshwar Mandir. Experience the transformative power of devotional chanting.',
+    keywords: 'kirtan, Shri Radha naam, bhajan, devotional music, Bhuteshwar Mandir, Krishna bhakti',
 };
 
 export default function Kirtan() {
@@ -19,8 +19,8 @@ export default function Kirtan() {
             <section className="kirtan-hero">
                 <div className="kirtan-hero-overlay"></div>
                 <div className="container kirtan-hero-content">
-                    <h1 className="sanskrit-text glow">राधा नाम कीर्तन</h1>
-                    <h2>Daily Radha Naam Kirtan</h2>
+                    <h1 className="sanskrit-text glow">श्री राधा नाम संकीर्तन</h1>
+                    <h2>Daily Shri Radha Naam Sankirtan</h2>
                     <div className="kirtan-timing-hero">
                         <p className="timing-text">Every Evening</p>
                         <p className="timing-main">6:25 PM</p>
@@ -131,7 +131,7 @@ export default function Kirtan() {
                 <div className="container">
                     <h2 className="section-title divine-title">
                         <span className="title-decoration">✦</span>
-                        About Radha Naam Kirtan
+                        About Shri Radha Naam Kirtan
                         <span className="title-decoration">✦</span>
                     </h2>
                     <div className="kirtan-about">
@@ -147,7 +147,7 @@ export default function Kirtan() {
                                     "हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे"
                                 </div>
                                 <p className="intro-text">
-                                    Radha Naam Kirtan is a <span className="highlight">divine practice</span> of chanting and singing the holy names of Radha and Krishna.
+                                    Shri Radha Naam Kirtan is a <span className="highlight">divine practice</span> of chanting and singing the holy names of Shri Radha and Krishna.
                                     It is a powerful spiritual practice that purifies the mind, brings peace to the heart, and connects
                                     us with the divine consciousness.
                                 </p>
@@ -246,7 +246,7 @@ export default function Kirtan() {
                                 <p className="sanskrit-text">राम राम हरे हरे</p>
                             </div>
                             <div className="rk-description">
-                                <p>The divine love of Radha and Krishna represents the eternal bond between the soul and the Supreme. Through kirtan, we celebrate this sacred relationship and invite divine grace into our lives.</p>
+                                <p>The divine love of Shri Radha and Krishna represents the eternal bond between the soul and the Supreme. Through kirtan, we celebrate this sacred relationship and invite divine grace into our lives.</p>
                                 <p>Join us in chanting the holy names and experience the transformative power of devotional music.</p>
                             </div>
                         </div>
@@ -385,7 +385,7 @@ export default function Kirtan() {
                     <div className="cta-box glow">
                         <h2>Join Us for Kirtan!</h2>
                         <p className="sanskrit-text">॥ सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः ॥</p>
-                        <p>Experience the divine joy of Radha Naam Kirtan</p>
+                        <p>Experience the divine joy of Shri Radha Naam Kirtan</p>
                         <div className="cta-details">
                             <p><strong>When:</strong> Every Evening at 6:25 PM</p>
                             <p><strong>Where:</strong> Bhuteshwar Mandir Main Hall</p>

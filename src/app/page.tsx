@@ -65,7 +65,8 @@ export default function Home() {
         </div>
 
         <div className="hero-content container">
-          <h1 className="hero-title">श्री भूतेश्वर मंदिर में आपका स्वागत है</h1>
+          <p className="hero-subtitle-small">प्राचीन</p>
+          <h1 className="hero-title">श्री भूतेश्वर महादेव मंदिर में आपका स्वागत है</h1>
 
           {/* 3 Slokas with Smooth Transitions */}
           <div className="hero-slokas-grid">
@@ -81,35 +82,36 @@ export default function Home() {
           </div>
 
           <div className="hero-actions">
+             <Link href="/daan" className="btn btn-secondary btn-large">
+              🙏 मंदिर सेवा में दान करें
+            </Link>
             <Link href="/book-pandit" className="btn btn-primary btn-large">
               पंडित जी बुक करें
             </Link>
-            <Link href="/daan" className="btn btn-secondary btn-large">
-              🙏 दान करें
-            </Link>
+           
           </div>
         </div>
       </section>
 
-      {/* Radha Naam Kirtan Highlight */}
+      {/* Shri Radha Naam Sankirtan Highlight */}
       <section className="kirtan-highlight section">
         <div className="container">
           <h2 className="section-title kirtan-section-title">
             <span className="title-ornament">✦</span>
-            Daily Radha Naam Kirtan
+            Daily Shri Radha Naam Sankirtan
             <span className="title-ornament">✦</span>
           </h2>
           <div className="kirtan-banner">
             <div className="kirtan-banner-content">
               <div className="kirtan-images">
                 <div className="kirtan-image-frame">
-                  <img src="/images/radha_krishna_hero_1765693499197.png" alt="Radha Krishna" className="kirtan-img" />
+                  <img src="/images/radha_krishna_hero_1765693499197.png" alt="Shri Radha Krishna" className="kirtan-img" />
                   <div className="kirtan-image-glow"></div>
                 </div>
               </div>
               <div className="kirtan-info">
                 <div className="kirtan-header">
-                  <h2 className="kirtan-title sanskrit-text">🎵 राधा नाम कीर्तन 🎵</h2>
+                  <h2 className="kirtan-title sanskrit-text">🎵 श्री राधा नाम संकीर्तन 🎵</h2>
                   <div className="kirtan-subtitle-badge">
                     <span className="badge-dot"></span>
                     <span>Daily Evening Celebration</span>
@@ -153,7 +155,7 @@ export default function Home() {
                 </div>
 
                 <Link href="/kirtan" className="btn btn-primary kirtan-cta-btn">
-                  Learn More About Kirtan
+                  Learn More About Sankirtan
                 </Link>
               </div>
             </div>
@@ -211,16 +213,16 @@ export default function Home() {
             <div className="about-mandir-text">
               <h2 className="about-mandir-title">
                 <span className="title-ornament-small">✦</span>
-                भूतेश्वरनाथ मंदिर के बारे में
+               श्री भूतेश्वर महादेव मंदिर के बारे में
                 <span className="title-ornament-small">✦</span>
               </h2>
               <p className="about-mandir-description">
-                श्री भूतेश्वर मंदिर जो कि खांडसा रोड, बसई रोड, गुरुग्राम पर स्थित है।
-                इसकी पहचान प्राचीन मंदिरों में से भी है। यह मंदिर गुरुग्राम के प्राचीनतम मंदिरों में से एक है।
+                श्री भूतेश्वर महादेव मंदिर जो कि सेक्टर 11, बसई खांडसा रोड, सदर बाज़ार ,गुरुग्राम में स्थित है। 
+                इसकी पहचान प्राचीन मंदिरों में है। यह मंदिर गुरुग्राम के प्राचीनतम मंदिरों में से एक है।
               </p>
               <p className="about-mandir-description">
-                मंदिर में भगवान शिव परिवार के साथ श्री राधा कृष्ण, माँ दुर्गा, शनि देव, नवग्रह, हनुमान जी,
-                राम दरबार, गणेश जी, खाटू श्याम जी और लक्ष्मी नारायण के दिव्य विग्रह स्थापित हैं।
+                मंदिर में भगवान शिव परिवार के साथ श्री राधा कृष्ण, माँ दुर्गा, शनि देव, नवग्रह, हनुमान जी, 
+                राम दरबार, गणेश जी, खाटू श्याम जी और लक्ष्मी नारायण के दिव्य विग्रह स्थापित हैं। 
                 मंदिर में प्रतिदिन आरती और संकीर्तन का आयोजन होता है।
               </p>
               <div className="about-mandir-features">
@@ -234,7 +236,7 @@ export default function Home() {
                 </div>
                 <div className="feature-point">
                   <span className="feature-icon">📿</span>
-                  <span>प्रतिदिन राधा नाम संकीर्तन</span>
+                  <span>प्रतिदिन श्री राधा नाम संकीर्तन</span>
                 </div>
                 <div className="feature-point">
                   <span className="feature-icon">🏥</span>
@@ -406,7 +408,7 @@ export default function Home() {
         <div className="container">
           <div className="images-grid">
             <div className="divine-image-card slide-in-left">
-              <img src="/images/radha_krishna_divine.png" alt="Radha Krishna" />
+              <img src="/images/radha_krishna_divine.png" alt="Shri Radha Krishna" />
               <p className="image-caption sanskrit-text">॥ राधे कृष्णा ॥</p>
             </div>
             <div className="divine-image-card slide-in-right">
