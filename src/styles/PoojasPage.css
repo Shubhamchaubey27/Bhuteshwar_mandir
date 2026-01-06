@@ -1,0 +1,269 @@
+.poojas-page {
+    background-color: #fff7ed;
+    min-height: 100vh;
+    padding-bottom: 4rem;
+}
+
+.poojas-header {
+    background-color: #8B0000;
+    /* Fallback color */
+    background-image:
+        linear-gradient(135deg, rgba(139, 0, 0, 0.8), rgba(255, 153, 51, 0.7)),
+        url('/images/custom_puja_hero.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 6rem 1rem 10rem;
+    text-align: center;
+    margin-bottom: -4rem;
+    position: relative;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+
+.poojas-header h1 {
+    font-size: 2.5rem;
+    /* Reduced from 3rem */
+    margin-bottom: 0.8rem;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    /* Explicitly White */
+}
+
+.poojas-header p {
+    font-size: 1.1rem;
+    /* Reduced from 1.2rem */
+    opacity: 0.95;
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+}
+
+.search-container {
+    position: relative;
+    max-width: 500px;
+    /* Tighter search bar */
+    margin: 0 auto;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    padding-right: 2.5rem;
+    border-radius: 99px;
+    border: none;
+    font-size: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #94a3b8;
+}
+
+.poojas-grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Enhanced Pujas Grid (Copied from BookPandit.css) */
+.pujas-grid-enhanced {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.puja-card-enhanced {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 215, 0, 0.25);
+    border-radius: 12px;
+    padding: 1.5rem;
+    /* Reduced from 2rem */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow:
+        0 8px 30px rgba(139, 0, 0, 0.08),
+        0 0 15px rgba(255, 153, 51, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.puja-card-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg,
+            transparent,
+            #FF9933 30%,
+            #FFD700 50%,
+            #FF9933 70%,
+            transparent);
+    /* Replaced variables with values for safety */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.puja-card-enhanced:hover::before {
+    opacity: 1;
+}
+
+.puja-card-enhanced:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 215, 0, 0.5);
+    box-shadow:
+        0 20px 60px rgba(139, 0, 0, 0.15),
+        0 0 40px rgba(255, 153, 51, 0.1);
+    background: rgba(255, 255, 255, 1);
+}
+
+.puja-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.puja-icon {
+    font-size: 2rem;
+    /* Reduced */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.puja-category-badge {
+    background: linear-gradient(135deg, rgba(255, 153, 51, 0.15), rgba(255, 215, 0, 0.15));
+    color: #FF9933;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1.5px solid rgba(255, 153, 51, 0.3);
+}
+
+.puja-name {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1.2rem;
+    /* Reduced */
+    color: #8B0000;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #8B0000, #FF9933);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.puja-description {
+    color: #64748b;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    /* Reduced body text */
+    margin-bottom: 0.8rem;
+    flex: 1;
+}
+
+.puja-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-top: 2px solid rgba(255, 215, 0, 0.2);
+    border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+    margin-bottom: 1rem;
+}
+
+.puja-duration {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #475569;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.meta-icon {
+    font-size: 1.1rem;
+}
+
+.puja-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.price-label {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-bottom: 2px;
+}
+
+.price-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #8B0000;
+}
+
+.puja-card-footer {
+    margin-top: auto;
+}
+
+.book-puja-btn {
+    width: 100%;
+    padding: 0.6rem 1.2rem;
+    /* Compact button */
+    background: linear-gradient(135deg, #FF9933, #8B0000);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+}
+
+.book-puja-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(139, 0, 0, 0.4);
+}
+
+.no-results {
+    text-align: center;
+    padding: 4rem;
+    color: #64748b;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 640px) {
+    .poojas-header h1 {
+        font-size: 1.8rem;
+        /* Mobile Size */
+    }
+
+    .pujas-grid-enhanced {
+        grid-template-columns: 1fr;
+    }
+
+    .poojas-header {
+        padding: 4rem 1rem 8rem;
+        /* Reduced mobile padding */
+    }
+}

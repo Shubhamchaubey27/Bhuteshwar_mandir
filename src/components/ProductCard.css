@@ -1,0 +1,346 @@
+.product-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: all 0.2s ease;
+    height: 100%;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.product-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    border-color: #ffedd5;
+}
+
+.product-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.product-icon {
+    width: 50px;
+    height: 50px;
+    background: #fff7ed;
+    color: #f97316;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+}
+
+.product-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #1f2937;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+/* Rudraksh Specific Number Styling */
+.rudraksh-number {
+    color: #c2410c;
+    /* Deep Orange */
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    margin-right: 2px;
+}
+
+.product-price {
+    margin: 0.15rem 0 0;
+    font-size: 1rem;
+    color: #db2777;
+    /* Pink-600 */
+    font-weight: 600;
+}
+
+.product-desc-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.product-desc {
+    color: #4b5563;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.product-mantra {
+    background: #fdf4ff;
+    border: 1px dashed #d946ef;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #86198f;
+    font-family: 'Tiro Devanagari Hindi', serif;
+    line-height: 1.4;
+}
+
+/* Metadata Grid (Planet, Deity) */
+.product-meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    background: #f8fafc;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.meta-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+}
+
+.meta-value {
+    font-size: 0.85rem;
+    color: #334155;
+    font-weight: 600;
+}
+
+.toggle-items-btn {
+    background: #f3f4f6;
+    border: none;
+    color: #4b5563;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+
+.toggle-items-btn:hover {
+    background: #e5e7eb;
+}
+
+.product-items-list {
+    background: #fff;
+    border-radius: 8px;
+    padding: 0;
+    margin-top: -0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid #f3f4f6;
+    overflow: hidden;
+}
+
+.details-section {
+    padding: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.details-section:last-child {
+    border-bottom: none;
+}
+
+.details-section h4 {
+    margin: 0 0 0.75rem;
+    color: #0f172a;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* Distinct Style for Ghar ka Saman */
+.home-items-section {
+    background-color: #eff6ff;
+    /* Light Blue Background */
+    border-top: 1px solid #dbeafe;
+}
+
+.home-items-section h4 {
+    color: #1e40af;
+    /* Dark Blue Text */
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.home-items-section ul li {
+    color: #1e3a8a;
+    /* Navy Blue for items */
+    font-weight: 500;
+}
+
+.product-items-list ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+}
+
+.product-items-list li {
+    color: #475569;
+    line-height: 1.5;
+}
+
+.benefits-list li {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+}
+
+.product-footer-btns {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.btn-buy-now {
+    background: #f97316;
+    /* Orange */
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-buy-now:hover {
+    background: #ea580c;
+}
+
+.btn-book-pandit {
+    background: white;
+    color: #f97316;
+    border: 1px solid #f97316;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-book-pandit:hover {
+    background: #fff7ed;
+}
+
+/* Toast Notification Styles */
+.pandit-booking-toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    border-left: 4px solid #f97316;
+    animation: slideDown 0.4s ease forwards;
+    min-width: 320px;
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.toast-icon {
+    font-size: 2rem;
+}
+
+.toast-content strong {
+    display: block;
+    color: #1f2937;
+    margin-bottom: 0.2rem;
+}
+
+.toast-content p {
+    margin: 0;
+    color: #4b5563;
+    font-size: 0.9rem;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translate(-50%, -20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+@media (max-width: 480px) {
+    .pandit-booking-toast {
+        width: 90%;
+        min-width: auto;
+    }
+
+    .product-card {
+        padding: 1rem;
+        /* Tighter card padding */
+    }
+
+    .product-icon {
+        width: 40px;
+        /* Smaller icon */
+        height: 40px;
+        font-size: 1.25rem;
+    }
+
+    .product-header h3 {
+        font-size: 0.95rem;
+        /* Smaller title */
+    }
+
+    .rudraksh-number {
+        font-size: 1.1rem;
+    }
+
+    .product-price {
+        font-size: 0.9rem;
+    }
+
+    .btn-buy-now {
+        padding: 0.6rem;
+        /* Smaller button */
+        font-size: 0.9rem;
+    }
+
+    .details-section h4 {
+        font-size: 0.9rem;
+    }
+
+    .product-items-list {
+        font-size: 0.85rem;
+    }
+}

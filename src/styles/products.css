@@ -1,0 +1,76 @@
+.product-page {
+    padding: 2rem 0 4rem;
+    min-height: 80vh;
+    background: #fdfaf7;
+    /* Very light warm bg */
+}
+
+.page-header-products {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.page-header-products h1 {
+    font-size: 1.75rem;
+    color: #c2410c;
+    /* Orange-700 */
+    margin: 0 0 0.5rem;
+    font-weight: 700;
+}
+
+.page-header-products p {
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+/* Shloka Header Styles */
+.shloka-container {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #fed7aa;
+}
+
+.sanskrit-shloka {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 1.1rem !important;
+    color: #c2410c !important;
+    /* Orange-700 */
+    margin-bottom: 0.25rem !important;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.shloka-meaning {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem !important;
+    color: #4b5563 !important;
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto !important;
+    line-height: 1.5;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header-products h1 {
+        font-size: 1.35rem;
+    }
+
+    .page-header-products {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+}

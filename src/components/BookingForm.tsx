@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, FormEvent, ChangeEvent } from 'react';
+import { useState, FormEvent, ChangeEvent, useEffect } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { BookingFormProps } from '@/types';
 import { pujas } from '@/data/pujas';
 import { pandits } from '@/data/pandits';
@@ -19,20 +20,41 @@ interface FormData {
 }
 
 const BookingForm = ({ selectedPuja, selectedPandit }: BookingFormProps) => {
+    const searchParams = useSearchParams();
+    const router = useRouter();
+
+    // Read Params from previous steps
+    const prePujaId = searchParams.get('pujaType');
+    const includeSamagri = searchParams.get('includeSamagri') === 'true';
+
+    // Product Card Flow (Samagri or Direct Product Buy)
+    const mode = searchParams.get('mode'); // 'product-checkout'
+    const productName = searchParams.get('productName');
+    const productPrice = searchParams.get('productPrice');
+    const deliveryMode = searchParams.get('deliveryMode'); // 'pickup' | 'delivery'
+    const deliveryCost = searchParams.get('deliveryCost');
+
+    const preSamagriId = searchParams.get('samagriId');
+    const preSamagriName = searchParams.get('samagriName');
+    const preSamagriPrice = searchParams.get('samagriPrice');
+
     const [formData, setFormData] = useState<FormData>({
         name: '',
         phone: '',
         email: '',
         date: '',
         time: '',
-        pujaType: selectedPuja || '',
+        pujaType: prePujaId || selectedPuja || '',
         panditId: selectedPandit?.toString() || '',
-        address: '',
+        address: deliveryMode === 'pickup' ? 'Self Pickup at Mandir' : '',
         specialRequirements: ''
     });
 
-    const [submitted, setSubmitted] = useState(false);
-    const [loading, setLoading] = useState(false);
+    useEffect(() => {
+        if (prePujaId) {
+            setFormData(prev => ({ ...prev, pujaType: prePujaId }));
+        }
+    }, [prePujaId]);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         setFormData({
@@ -41,208 +63,148 @@ const BookingForm = ({ selectedPuja, selectedPandit }: BookingFormProps) => {
         });
     };
 
-    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setLoading(true);
 
-        // Get puja and pandit details
+        // Branch: Product Checkout
+        if (mode === 'product-checkout') {
+            const params = new URLSearchParams({
+                invoiceType: 'product', // Signal for Invoice Page
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone,
+                address: formData.address,
+                productName: productName || 'Product',
+                productPrice: productPrice || '0',
+                deliveryMode: deliveryMode || 'pickup',
+                deliveryCost: deliveryCost || '0',
+                date: new Date().toISOString().split('T')[0] // Transaction Date
+            });
+            router.push(`/invoice?${params.toString()}`);
+            return;
+        }
+
+        // Branch: Standard Puja Booking
         const puja = pujas.find(p => p.id === parseInt(formData.pujaType));
         const pandit = pandits.find(p => p.id === parseInt(formData.panditId));
 
-        // Prepare data for PHP
-        const bookingData = {
+        // Calculate Average Price logic...
+        let dakshinaValue = 501;
+        if (puja?.price) {
+            const cleanPrice = puja.price.replace(/[₹,]/g, '').replace(/\/.*$/, '').trim();
+            if (cleanPrice.includes('-')) {
+                const parts = cleanPrice.split('-').map(p => parseInt(p.trim()));
+                if (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) {
+                    dakshinaValue = Math.round((parts[0] + parts[1]) / 2);
+                }
+            } else {
+                const parsed = parseInt(cleanPrice);
+                if (!isNaN(parsed)) dakshinaValue = parsed;
+            }
+        }
+
+        const params = new URLSearchParams({
             name: formData.name,
-            phone: formData.phone,
-            email: formData.email,
             date: formData.date,
             time: formData.time,
-            pujaName: puja?.name || 'Not selected',
-            panditName: pandit?.name || 'Not selected',
-            address: formData.address,
-            specialRequirements: formData.specialRequirements || 'None'
-        };
+            pujaName: puja?.name || 'Puja Service',
+            panditName: pandit?.name || 'Temple Pandit',
+            panditDakshina: dakshinaValue.toString(),
+        });
 
-        try {
-            // Send to PHP backend
-            const response = await fetch('/api/send-booking.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(bookingData)
-            });
-
-            const result = await response.json();
-
-            if (result.success) {
-                setSubmitted(true);
-
-                // Create WhatsApp message
-                const message = `
-नमस्ते! मुझे पूजा बुक करनी है:
-
-नाम: ${formData.name}
-फोन: ${formData.phone}
-ईमेल: ${formData.email}
-पूजा: ${puja?.name || 'Not selected'}
-पंडित जी: ${pandit?.name || 'Not selected'}
-तारीख: ${formData.date}
-समय: ${formData.time}
-पता: ${formData.address}
-विशेष आवश्यकताएं: ${formData.specialRequirements || 'कोई नहीं'}
-                `.trim();
-
-                const whatsappNumber = '919324915650';
-                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-                // Redirect to WhatsApp after a short delay
-                setTimeout(() => {
-                    window.location.href = whatsappUrl;
-                }, 2000);
-            } else {
-                alert('Failed to send booking request. Please try again.');
-                setLoading(false);
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('An error occurred. Please try contacting us directly via WhatsApp.');
-            setLoading(false);
+        if (includeSamagri) {
+            params.append('samagriName', 'Standard Puja Samagri Kit');
+            params.append('samagriPrice', '1100');
         }
+        else if (preSamagriId && preSamagriName && preSamagriPrice) {
+            params.append('samagriName', preSamagriName);
+            params.append('samagriPrice', preSamagriPrice);
+        }
+
+        router.push(`/invoice?${params.toString()}`);
     };
 
-    if (submitted) {
-        return (
-            <div className="booking-success fade-in">
-                <div className="success-icon">✓</div>
-                <h3>बुकिंग अनुरोध सबमिट हो गया!</h3>
-                <p>आपको WhatsApp पर रीडायरेक्ट किया जा रहा है...</p>
-                <p className="note">आपकी बुकिंग की जानकारी हमें ईमेल पर भी भेज दी गई है। हमारे पंडित जी जल्द ही आपसे संपर्क करेंगे।</p>
-                <div className="loading-spinner">
-                    <div className="spinner"></div>
-                </div>
-            </div>
-        );
-    }
+    const isProductMode = mode === 'product-checkout';
 
     return (
-        <form className="booking-form" onSubmit={handleSubmit}>
+        <form className="booking-form" onSubmit={handleFormSubmit}>
+            {isProductMode && (
+                <div style={{ background: '#fff7ed', padding: '1rem', borderRadius: '8px', marginBottom: '1.5rem', border: '1px solid #fed7aa' }}>
+                    <h3 style={{ margin: 0, color: '#9a3412', fontSize: '1.1rem' }}>📦 Ordering: {productName}</h3>
+                    <p style={{ margin: '0.5rem 0 0', color: '#ea580c', fontSize: '0.9rem', fontWeight: 600 }}>
+                        {deliveryMode === 'pickup' ? 'Type: Self Pickup (Free)' : `Type: Home Delivery (+₹${deliveryCost})`}
+                    </p>
+                </div>
+            )}
+
             <div className="form-row">
                 <div className="form-group">
                     <label className="form-label">Full Name *</label>
-                    <input
-                        type="text"
-                        name="name"
-                        className="form-input"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        placeholder="Enter your full name"
-                    />
+                    <input type="text" name="name" className="form-input" value={formData.name} onChange={handleChange} required placeholder="Enter your full name" />
                 </div>
-
                 <div className="form-group">
                     <label className="form-label">Phone Number *</label>
-                    <input
-                        type="tel"
-                        name="phone"
-                        className="form-input"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        required
-                        placeholder="+91 XXXXX XXXXX"
-                        pattern="[0-9]{10}"
-                    />
+                    <input type="tel" name="phone" className="form-input" value={formData.phone} onChange={handleChange} required placeholder="+91 XXXXX XXXXX" pattern="[0-9]{10}" />
                 </div>
             </div>
 
             <div className="form-group">
                 <label className="form-label">Email</label>
-                <input
-                    type="email"
-                    name="email"
-                    className="form-input"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="your.email@example.com"
-                />
+                <input type="email" name="email" className="form-input" value={formData.email} onChange={handleChange} placeholder="your.email@example.com" />
             </div>
 
-            <div className="form-group">
-                <label className="form-label">Select Puja *</label>
-                <select
-                    name="pujaType"
-                    className="form-select"
-                    value={formData.pujaType}
-                    onChange={handleChange}
-                    required
-                >
-                    <option value="">Choose a puja...</option>
-                    {pujas.map((puja) => (
-                        <option key={puja.id} value={puja.id}>
-                            {puja.name} - {puja.price}
-                        </option>
-                    ))}
-                </select>
-            </div>
+            {!isProductMode && (
+                <>
+                    <div className="form-group">
+                        <label className="form-label">Select Puja *</label>
+                        <select name="pujaType" className="form-select" value={formData.pujaType} onChange={handleChange} required>
+                            <option value="">Choose a puja...</option>
+                            {pujas.map((puja) => (
+                                <option key={puja.id} value={puja.id}>{puja.name}</option>
+                            ))}
+                        </select>
+                    </div>
 
-            <div className="form-row">
+                    <div className="form-row">
+                        <div className="form-group">
+                            <label className="form-label">Preferred Date *</label>
+                            <input type="date" name="date" className="form-input" value={formData.date} onChange={handleChange} required min={new Date().toISOString().split('T')[0]} />
+                        </div>
+                        <div className="form-group">
+                            <label className="form-label">Preferred Time *</label>
+                            <input type="time" name="time" className="form-input" value={formData.time} onChange={handleChange} required />
+                        </div>
+                    </div>
+                </>
+            )}
+
+            {(deliveryMode !== 'pickup') && (
                 <div className="form-group">
-                    <label className="form-label">Preferred Date *</label>
-                    <input
-                        type="date"
-                        name="date"
-                        className="form-input"
-                        value={formData.date}
+                    <label className="form-label">Address {isProductMode ? '(Delivery)' : '*'}</label>
+                    <textarea
+                        name="address"
+                        className="form-textarea"
+                        value={formData.address}
                         onChange={handleChange}
-                        required
-                        min={new Date().toISOString().split('T')[0]}
+                        required={deliveryMode !== 'pickup'}
+                        placeholder={isProductMode ? "Complete delivery address with pincode" : "Complete address for the puja"}
+                        rows={3}
                     />
                 </div>
+            )}
 
+            {!isProductMode && (
                 <div className="form-group">
-                    <label className="form-label">Preferred Time *</label>
-                    <input
-                        type="time"
-                        name="time"
-                        className="form-input"
-                        value={formData.time}
-                        onChange={handleChange}
-                        required
-                    />
+                    <label className="form-label">Special Requirements</label>
+                    <textarea name="specialRequirements" className="form-textarea" value={formData.specialRequirements} onChange={handleChange} placeholder="Any specific instructions..." rows={3} />
                 </div>
-            </div>
+            )}
 
-            <div className="form-group">
-                <label className="form-label">Address *</label>
-                <textarea
-                    name="address"
-                    className="form-textarea"
-                    value={formData.address}
-                    onChange={handleChange}
-                    required
-                    placeholder="Enter the complete address where puja will be performed"
-                    rows={3}
-                />
-            </div>
-
-            <div className="form-group">
-                <label className="form-label">Special Requirements</label>
-                <textarea
-                    name="specialRequirements"
-                    className="form-textarea"
-                    value={formData.specialRequirements}
-                    onChange={handleChange}
-                    placeholder="Any special requirements or instructions..."
-                    rows={3}
-                />
-            </div>
-
-            <button type="submit" className="btn btn-primary btn-submit" disabled={loading}>
-                {loading ? '⏳ भेजा जा रहा है...' : '📱 सबमिट करें और WhatsApp पर संपर्क करें'}
+            <button type="submit" className="btn btn-primary btn-submit">
+                {isProductMode ? `Proceed to Pay` : "Proceed ('आगे बढ़ें')"}
             </button>
-
-            <p className="form-note">
-                * आवश्यक फ़ील्ड। सबमिशन के बाद, आपको बुकिंग की पुष्टि के लिए WhatsApp पर रीडायरेक्ट किया जाएगा।
+            <p style={{ marginTop: '1rem', color: '#666', fontSize: '0.9rem', textAlign: 'center' }}>
+                You will review the invoice on the next page.
             </p>
         </form>
     );

@@ -1,0 +1,110 @@
+.invoice-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 600px;
+    margin: 2rem auto;
+    border: 1px solid #e2e8f0;
+}
+
+.invoice-header {
+    text-align: center;
+    border-bottom: 2px dashed #cbd5e1;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.invoice-title {
+    font-size: 1.5rem;
+    color: #1e293b;
+    margin: 0;
+    font-weight: 700;
+}
+
+.invoice-date {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.invoice-details {
+    margin-bottom: 2rem;
+}
+
+.invoice-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 1rem;
+    color: #334155;
+}
+
+.invoice-row.header {
+    font-weight: 600;
+    color: #0f172a;
+    background: #f8fafc;
+    padding: 0.75rem;
+    border-radius: 6px;
+}
+
+.invoice-row.total {
+    border-top: 2px solid #0f172a;
+    border-bottom: none;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #0f172a;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+.invoice-customer-info {
+    background: #fdf2f8;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.customer-row {
+    display: flex;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.customer-label {
+    width: 120px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.customer-value {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.pay-btn-container {
+    text-align: center;
+}
+
+.pay-btn {
+    background: #f97316;
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+}
+
+.pay-btn:hover {
+    background: #ea580c;
+}
+
+.pay-btn:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+}

@@ -85,8 +85,13 @@
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .btn-submit:disabled {
@@ -112,5 +117,23 @@
 
     .booking-success {
         padding: 2rem 1.5rem;
+    }
+
+    /* Mobile Text Reductions */
+    .form-label {
+        font-size: 0.85rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+
+    .btn-submit {
+        font-size: 0.95rem;
+        padding: 0.8rem;
     }
 }

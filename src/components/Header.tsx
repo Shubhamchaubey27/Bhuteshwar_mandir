@@ -8,9 +8,17 @@ import './Header.css';
 
 const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
     const pathname = usePathname();
 
     const isActive = (path: string) => pathname === path;
+
+    const productCategories = [
+        { title: 'Pooja Samagri', icon: '🙏', link: '/products/pooja-samagri', desc: 'Daily worship essentials' },
+        { title: 'Pooja & Havan Samagri', icon: '🔥', link: '/products/havan-samagri', desc: 'Complete Havan kits' },
+        { title: 'Rudraksh', icon: '📿', link: '/products/rudraksh', desc: 'Authentic beads' },
+        { title: 'Mani Patthar', icon: '💎', link: '/products/mani-patthar', desc: 'Certified Gemstones' }
+    ];
 
     return (
         <header className="header">
@@ -80,6 +88,27 @@ const Header = () => {
                                     Daan
                                 </Link>
                             </li>
+
+                            {/* Products Mega Menu */}
+                            <li className="nav-item-products">
+                                <button className="nav-link-btn">
+                                    Products <span className="arrow-down">▼</span>
+                                </button>
+                                <div className="mega-menu">
+                                    <div className="mega-menu-grid">
+                                        {productCategories.map((item, index) => (
+                                            <Link href={item.link} key={index} className="mega-menu-item">
+                                                <span className="mega-icon">{item.icon}</span>
+                                                <div className="mega-content">
+                                                    <h4>{item.title}</h4>
+                                                    <p>{item.desc}</p>
+                                                </div>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </div>
+                            </li>
+
                             <li>
                                 <Link
                                     href="/learning"
@@ -158,6 +187,33 @@ const Header = () => {
                                     Daan
                                 </Link>
                             </li>
+
+                            {/* Mobile Products Accordion */}
+                            <li className="mobile-products-item">
+                                <button
+                                    className="mobile-nav-link-btn"
+                                    onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
+                                >
+                                    Products
+                                    <span className={`arrow-down ${mobileProductsOpen ? 'rotated' : ''}`}>▼</span>
+                                </button>
+                                {mobileProductsOpen && (
+                                    <ul className="mobile-sub-menu">
+                                        {productCategories.map((item, index) => (
+                                            <li key={index}>
+                                                <Link
+                                                    href={item.link}
+                                                    onClick={() => setMobileMenuOpen(false)}
+                                                >
+                                                    <span className="sub-icon">{item.icon}</span>
+                                                    {item.title}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </li>
+
                             <li>
                                 <Link
                                     href="/learning"
