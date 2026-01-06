@@ -67,7 +67,7 @@ export default function BookPandit() {
                         हमारे अनुभवी एवं विद्वान ब्राह्मणों से अपनी पूजा, संस्कार एवं अनुष्ठान की व्यवस्था करें
                     </p>
                     <div className="hero-stats">
-                       
+
                         <div className="stat-item">
                             <div className="stat-number">36+</div>
                             <div className="stat-label">पूजा विधियां</div>
@@ -220,7 +220,7 @@ export default function BookPandit() {
                                     </div>
                                 </div>
                                 <div className="puja-card-footer">
-                                    <button 
+                                    <button
                                         className="book-puja-btn"
                                         onClick={() => handleBookPuja(puja)}
                                     >
@@ -257,8 +257,8 @@ export default function BookPandit() {
                         </div>
                         <div className="pandits-selection-grid">
                             {pandits.map((pandit) => (
-                                <div 
-                                    key={pandit.id} 
+                                <div
+                                    key={pandit.id}
                                     className={`pandit-selection-card ${selectedPandit?.id === pandit.id ? 'selected' : ''}`}
                                     onClick={() => handleSelectPandit(pandit)}
                                 >
@@ -281,7 +281,7 @@ export default function BookPandit() {
                                             ))}
                                         </div>
                                     </div>
-                                    <button 
+                                    <button
                                         className={`select-pandit-btn ${selectedPandit?.id === pandit.id ? 'selected' : ''}`}
                                         onClick={(e) => {
                                             e.stopPropagation();
@@ -323,9 +323,9 @@ export default function BookPandit() {
                         </p>
                     </div>
                     <div className="booking-container">
-                        <BookingForm 
-                            selectedPuja={selectedPuja?.id.toString()} 
-                            selectedPandit={selectedPandit?.id} 
+                        <BookingForm
+                            selectedPuja={selectedPuja?.id.toString()}
+                            selectedPandit={selectedPandit?.id}
                         />
                     </div>
                 </div>
@@ -339,7 +339,7 @@ export default function BookPandit() {
                         <h2>तुरंत सहायता चाहिए?</h2>
                         <p>हमसे WhatsApp पर संपर्क करें और तुरंत पंडित जी बुक करें</p>
                         <a
-                            href="https://wa.me/919324915650?text=नमस्ते! मुझे पंडित जी बुक करना है।"
+                            href="https://wa.me/918750929004?text=नमस्ते! मुझे पंडित जी बुक करना है।"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="whatsapp-cta-btn"
@@ -347,7 +347,7 @@ export default function BookPandit() {
                             <span className="whatsapp-icon">📱</span>
                             WhatsApp पर संपर्क करें
                         </a>
-                        <p className="contact-number">+91 93249 15650</p>
+                        <p className="contact-number">+91 8750929004</p>
                     </div>
                 </div>
             </section>

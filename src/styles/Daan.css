@@ -91,3 +91,50 @@
         padding: 1.5rem;
     }
 }
+
+@media (max-width: 480px) {
+    .daan-intro h2 {
+        font-size: 1.4rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .daan-intro p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .donation-cta .btn-large {
+        width: 100%;
+        padding: 0.875rem;
+        font-size: 1.1rem;
+    }
+
+    .impact-icon {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .impact-card h3 {
+        font-size: 1rem;
+    }
+
+    .impact-card p {
+        font-size: 0.85rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .transparency-section {
+        padding: 1.25rem;
+    }
+
+    .transparency-content p {
+        font-size: 0.9rem;
+    }
+
+    .transparency-content .note {
+        font-size: 0.8rem;
+    }
+}
