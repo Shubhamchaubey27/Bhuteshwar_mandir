@@ -141,7 +141,7 @@ const Header = () => {
 
                     {/* Mobile Menu Button */}
                     <button
-                        className="mobile-menu-btn"
+                        className={`mobile-menu-btn ${mobileMenuOpen ? 'active' : ''}`}
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                         aria-label="Toggle menu"
                     >

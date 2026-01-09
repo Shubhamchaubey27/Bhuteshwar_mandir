@@ -34,10 +34,10 @@ const PanditCard = ({ pandit, showBookButton = true }: PanditCardProps) => {
                 {showBookButton && (
                     <div className="pandit-actions">
                         <button className="btn btn-primary" onClick={() => window.location.href = `/poojas?panditId=${pandit.id}`}>
-                            अभी बुक करें
+                            Book Now
                         </button>
-                        <button className="btn btn-whatsapp" onClick={handleWhatsApp}>
-                            📱 WhatsApp
+                        <button className="btn btn-details" onClick={() => window.location.href = `/book-pandit/${pandit.id}`}>
+                            View Details
                         </button>
                     </div>
                 )}

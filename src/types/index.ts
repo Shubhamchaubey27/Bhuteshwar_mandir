@@ -22,6 +22,7 @@ export interface Pandit {
     whatsapp: string;
     description: string;
     expertise: string[];
+    order?: number;
 }
 
 // Puja Types

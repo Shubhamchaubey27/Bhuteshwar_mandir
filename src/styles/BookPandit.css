@@ -101,13 +101,180 @@
 
 /* ... (skipping section headers) ... */
 
-.pandits-grid-enhanced {
-    display: grid;
-    /* Reduced min width to show more on screen */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-xl);
-    max-width: 1200px;
+/* Head Pandit Section */
+.head-pandit-section {
+    background: linear-gradient(to bottom, #fffaf0, #fff);
+    padding: var(--spacing-3xl) var(--spacing-xl);
+    text-align: center;
+    border-bottom: 1px solid rgba(139, 0, 0, 0.1);
+}
+
+.head-pandit-container {
+    max-width: 1000px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.head-pandit-photo {
+    width: 300px;
+    height: 350px;
+    border-radius: 20px;
+    border: 4px solid var(--saffron);
+    padding: 0;
+    background: #fff8f0;
+    margin-bottom: var(--spacing-lg);
+    box-shadow: 0 10px 40px rgba(139, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.head-pandit-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom;
+    border-radius: 20px;
+    transition: transform 0.5s ease;
+}
+
+.head-pandit-photo:hover img {
+    transform: scale(1.02);
+}
+
+.head-pandit-name {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 2.5rem;
+    color: var(--deep-red);
+    margin-bottom: var(--spacing-xs);
+}
+
+.head-pandit-designation {
+    font-size: 1.2rem;
+    color: var(--saffron);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--spacing-md);
+}
+
+.head-pandit-bio {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    line-height: 1.8;
+    max-width: 800px;
+}
+
+/* Head Pandit Actions */
+.head-pandit-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-primary-head,
+.btn-secondary-head {
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Tiro Devanagari Hindi', serif;
+}
+
+.btn-primary-head {
+    background: linear-gradient(135deg, var(--saffron), var(--deep-red));
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+}
+
+.btn-primary-head:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.4);
+}
+
+.btn-secondary-head {
+    background: transparent;
+    color: var(--deep-red);
+    border: 2px solid var(--deep-red);
+}
+
+.btn-secondary-head:hover {
+    background: rgba(139, 0, 0, 0.05);
+    transform: translateY(-3px);
+}
+
+/* Enhanced Fluid Grid for Other Pandits */
+.pandits-fluid-section {
+    padding: var(--spacing-3xl) 4%;
+    /* Fluid padding */
+    background: #fff;
+}
+
+.pandits-grid-fluid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Strict 3 Columns */
+    gap: 3rem;
+    width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .pandits-grid-fluid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .pandits-fluid-section {
+        padding: var(--spacing-xl) var(--spacing-sm);
+        /* Tighter padding for mobile */
+    }
+
+    .pandits-grid-fluid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 Columns on Mobile */
+        gap: 0.75rem;
+        /* Tighter gap */
+    }
+
+    .head-pandit-photo {
+        width: 180px;
+        height: 220px;
+        /* Rectangular on mobile too */
+        border-radius: 16px;
+    }
+
+    .head-pandit-name {
+        font-size: 1.5rem;
+        /* Much smaller */
+        margin-bottom: 0.2rem;
+    }
+
+    .head-pandit-designation {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: 1px;
+    }
+
+    .head-pandit-bio {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        padding: 0 1rem;
+    }
+
+    .head-pandit-actions {
+        margin-top: 1rem;
+        gap: 0.8rem;
+    }
+
+    .btn-primary-head,
+    .btn-secondary-head {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.9rem;
+    }
 }
 
 /* ... */
@@ -289,10 +456,9 @@
 }
 
 /* Mobile Tweaks */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .pandit-hero-title {
         font-size: 2rem;
-        /* Reduced for mobile */
     }
 
     .pandit-hero-subtitle {
@@ -304,8 +470,53 @@
     }
 
     .pujas-grid-enhanced {
-        grid-template-columns: 1fr;
-        /* Single column on very small screens */
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 Columns on Mobile */
+        gap: 0.75rem;
+    }
+
+    .puja-card-enhanced {
+        padding: 0.8rem;
+    }
+
+    .puja-name {
+        font-size: 0.95rem;
+        /* Small Title */
+        margin-bottom: 0.3rem;
+    }
+
+    .puja-icon {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .puja-description {
+        display: none;
+        /* Hide description on mobile */
+    }
+
+    .puja-meta {
+        padding: 0.4rem 0;
+        margin-bottom: 0.5rem;
+        font-size: 0.75rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+
+    .puja-duration,
+    .puja-price {
+        font-size: 0.75rem;
+    }
+
+    .price-value {
+        font-size: 0.95rem;
+    }
+
+    .puja-card-enhanced .book-puja-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        width: 100%;
     }
 }
 

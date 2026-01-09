@@ -144,7 +144,7 @@ const BookingForm = ({ selectedPuja, selectedPandit }: BookingFormProps) => {
                 </div>
                 <div className="form-group">
                     <label className="form-label">Phone Number *</label>
-                    <input type="tel" name="phone" className="form-input" value={formData.phone} onChange={handleChange} required placeholder="+91 XXXXX XXXXX" pattern="[0-9]{10}" />
+                    <input type="tel" name="phone" className="form-input" value={formData.phone} onChange={handleChange} required placeholder="Enter mobile number" />
                 </div>
             </div>
 

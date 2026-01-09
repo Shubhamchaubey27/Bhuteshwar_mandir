@@ -86,20 +86,44 @@ export default function BookPandit() {
             </section>
 
             {/* Pandits Section */}
-            <section className="pandits-section section">
-                <div className="container">
-                    <div className="section-header">
-                        <h2 className="section-title pandits-title">
-                            <span className="title-decoration">✦</span>
-                            Our Learned Pandits
-                            <span className="title-decoration">✦</span>
-                        </h2>
+            {/* Head Pandit Section */}
+            {pandits.filter(p => p.order === 0).map(headPandit => (
+                <section key={headPandit.id} className="head-pandit-section">
+                    <div className="head-pandit-container">
+                        <div className="head-pandit-photo">
+                            <img src={headPandit.photo} alt={headPandit.name} />
+                        </div>
+                        <h2 className="head-pandit-name">{headPandit.name}</h2>
+                        <div className="head-pandit-designation">{headPandit.specialization}</div>
+                        <p className="head-pandit-bio">{headPandit.description}</p>
+                        <div className="head-pandit-actions">
+                            <button className="btn-primary-head" onClick={() => window.location.href = `/poojas?panditId=${headPandit.id}`}>
+                                Book Now
+                            </button>
+                            <button className="btn-secondary-head" onClick={() => window.location.href = `/book-pandit/${headPandit.id}`}>
+                                View Details
+                            </button>
+                        </div>
                     </div>
-                    <div className="pandits-grid-enhanced">
-                        {pandits.map((pandit) => (
+                </section>
+            ))}
+
+            {/* Other Pandits Grid - Fluid Layout */}
+            <section className="pandits-fluid-section">
+                <div className="section-header">
+                    <h2 className="section-title pandits-title">
+                        <span className="title-decoration">✦</span>
+                        Our Learned Pandits
+                        <span className="title-decoration">✦</span>
+                    </h2>
+                </div>
+                <div className="pandits-grid-fluid">
+                    {pandits
+                        .filter(p => p.order !== 0)
+                        .sort((a, b) => (a.order || 99) - (b.order || 99))
+                        .map((pandit) => (
                             <PanditCard key={pandit.id} pandit={pandit} />
                         ))}
-                    </div>
                 </div>
             </section>
 

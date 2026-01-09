@@ -58,6 +58,9 @@
     font-size: 1rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     outline: none;
+    color: #333;
+    /* Fix for invisible text */
+    background: white;
 }
 
 .search-icon {
